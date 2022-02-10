@@ -2,13 +2,15 @@ import React from "react";
 import logo from "../assets/img/vinted-logo.svg";
 import helpIcon from "../assets/img/help-icon.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Cookies from "js-cookie";
 import "../styles/header.css";
 
-const Header = () => {
+const Header = ({ setCookie, cookie }) => {
 	const navigate = useNavigate();
 	const handleDisconnect = () => {
 		Cookies.remove("token");
+		setCookie(undefined);
 		navigate("/");
 	};
 	return (
@@ -32,7 +34,7 @@ const Header = () => {
 							placeholder="Rechercher des aticles"
 						/>
 					</div>
-					{Cookies.get("token") ? (
+					{cookie ? (
 						<button
 							className="button-logout header-button"
 							onClick={handleDisconnect}
@@ -62,7 +64,7 @@ const Header = () => {
 			</div>
 			<hr />
 			<div className="container1280">
-				<div className="nav-third-line">
+				<div className="nav-second-line">
 					<a href="#">Femmes</a>
 					<a href="#">Hommes</a>
 					<a href="#">Enfants</a>

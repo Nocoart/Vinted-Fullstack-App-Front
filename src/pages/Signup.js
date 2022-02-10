@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 import "../styles/signup.css";
 
-const Signup = () => {
+const Signup = ({ setCookie }) => {
 	const navigate = useNavigate();
 
 	const formObj = { newsletter: false };
@@ -18,6 +18,7 @@ const Signup = () => {
 		);
 		console.log(response.data.token);
 		Cookies.set("token", response.data.token);
+		setCookie(Cookies.get("token"));
 		navigate("/");
 	};
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const Login = () => {
+const Login = ({ setCookie }) => {
 	const navigate = useNavigate();
 
 	const formObj = {};
@@ -15,6 +15,8 @@ const Login = () => {
 			formObj
 		);
 		Cookies.set("token", response.data.token);
+		setCookie(Cookies.get("token"));
+
 		navigate("/");
 	};
 	return (

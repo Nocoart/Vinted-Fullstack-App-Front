@@ -2814,6 +2814,11 @@ cjs-module-lexer@^1.0.0:
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
 
+classnames@^2.2.3:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
 clean-css@^5.2.2:
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-5.2.4.tgz#982b058f8581adb2ae062520808fb2429bd487a4"
@@ -7008,6 +7013,19 @@ react-multi-carousel@^2.6.5:
   resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.6.5.tgz#faeceb697b138c7a1c403c58ddc5f33cfc19b3f2"
   integrity sha512-i5iuAm5XRT/h7uBL9/pGWeRsQXzqvjBrPVP1sobKgDKEvfZuKFpYp/alaQhTRM56Jtkb8jZpSqLn52Ku6jJbDg==
 
+react-range@^1.8.12:
+  version "1.8.12"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.12.tgz#61fe79421a519a4d77c76838012d895b75ead42f"
+  integrity sha512-vY2eCNDvKlXtEpl8xx5AQVIBeE4ZZ46dLVL+82f4FcS9XrPqz4+XagPHmq3IPqYuVQ2H4b8UArXzvVAsd/B03Q==
+
+react-rangeslider@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-rangeslider/-/react-rangeslider-2.2.0.tgz#4362b01f4f5a455f0815d371d496f69ca4c6b5aa"
+  integrity sha512-5K7Woa+cyqZ5wiW5+KhqGV+3+FiFxGKQ9rUxTMh52sObXVYEeBbfxFrp1eBvS8mRIxnUbHz9ppnFP0LhwOyNeg==
+  dependencies:
+    classnames "^2.2.3"
+    resize-observer-polyfill "^1.4.2"
+
 react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
@@ -7231,6 +7249,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+resize-observer-polyfill@^1.4.2:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-cwd@^3.0.0:
   version "3.0.0"
