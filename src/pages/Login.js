@@ -42,7 +42,7 @@ const Login = ({ setCookie }) => {
 
 				<button type="submit">Se connecter</button>
 			</form>
-			<Link to={"/signup"}>Tu as déja un compte? connecte-toi</Link>
+			<Link to={"/signup"}>Pas encore de compte? Inscris-toi !</Link>
 		</div>
 	);
 };
