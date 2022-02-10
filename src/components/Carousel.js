@@ -36,6 +36,8 @@ const Carousel = () => {
 							price={elem.product_price.toFixed(2)}
 							brand={elem.product_details[0].MARQUE}
 							id={elem._id}
+							avatar={elem.owner.account.avatar.secure_url}
+							username={elem.owner.account.username}
 						/>
 					);
 				})}

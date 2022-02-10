@@ -1,5 +1,45 @@
 .banner {
+	position: relative;
+}
+
+.banner .banner-img {
 	width: 100vw;
 	height: 60vh;
 	object-fit: cover;
+}
+
+.banner .banner-cut {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.banner-box {
+	position: absolute;
+	height: 220px;
+	width: 360px;
+	background-color: #fff;
+	padding: 25px;
+	border-radius: 3px;
+	font-size: 34px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 75px;
+	box-shadow: 0 0 2px rgb(17 17 17 / 24%);
+	left: 10vw;
+	top: 20vh;
+}
+
+.banner-box button {
+	height: 45px;
+	width: 187px;
+	background-color: #2baeb7;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	padding: 0 14px;
+	margin-top: 32px;
 }

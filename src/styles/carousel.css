@@ -17,9 +17,9 @@
 }
 
 .carousel-item {
-	height: 375px;
+	height: 410px;
 	width: 195px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 .carousel-link {
 	text-decoration: none;
@@ -27,10 +27,12 @@
 }
 
 .carousel-item p {
-	padding: 5px 0;
+	padding: 0px 0;
+	color: #333;
 }
 
 .carousel-item-image {
 	height: 325px;
 	width: 100%;
+	margin-top: 15px;
 }
