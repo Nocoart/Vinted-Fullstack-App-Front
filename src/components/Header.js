@@ -3,7 +3,6 @@ import logo from "../assets/img/vinted-logo.svg";
 import helpIcon from "../assets/img/help-icon.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-
 import "../styles/header.css";
 
 const Header = () => {
