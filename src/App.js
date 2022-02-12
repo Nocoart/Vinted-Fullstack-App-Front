@@ -13,13 +13,19 @@ import "./styles/colors.css";
 
 function App() {
 	const [cookie, setCookie] = useState(Cookies.get("Token") || undefined);
+	const [searchField, setSearchField] = useState("");
 
 	return (
 		<div className="App">
 			<Router>
-				<Header setCookie={setCookie} cookie={cookie} />
+				<Header
+					setCookie={setCookie}
+					cookie={cookie}
+					setSearchField={setSearchField}
+					searchField={searchField}
+				/>
 				<Routes>
-					<Route path="/" element={<Home />} />
+					<Route path="/" element={<Home searchField={searchField} />} />
 					<Route path="/offer/:id" element={<Product />} />
 					<Route path="/signup" element={<Signup setCookie={setCookie} />} />
 					<Route path="/login" element={<Login setCookie={setCookie} />} />

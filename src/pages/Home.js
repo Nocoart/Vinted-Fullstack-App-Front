@@ -4,7 +4,7 @@ import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import SearchFilter from "../components/SearchFilter";
 
-const Home = () => {
+const Home = ({ searchField }) => {
 	const [filter, setFilter] = useState();
 
 	return (
@@ -12,7 +12,7 @@ const Home = () => {
 			<hr />
 			<SearchFilter />
 			<Banner />
-			<Carousel />
+			<Carousel searchField={searchField} />
 		</main>
 	);
 };

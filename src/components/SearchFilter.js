@@ -58,10 +58,10 @@ const SearchFilter = () => {
 						{...props}
 						style={{
 							...props.style,
-							height: "30px",
-							width: "30px",
+							height: "15px",
+							width: "15px",
 							borderRadius: "50%",
-							backgroundColor: "#FFF",
+							backgroundColor: "var(--vintedGreen)",
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",

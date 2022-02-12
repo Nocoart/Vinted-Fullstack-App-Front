@@ -2,17 +2,22 @@ import React from "react";
 import logo from "../assets/img/vinted-logo.svg";
 import helpIcon from "../assets/img/help-icon.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import Cookies from "js-cookie";
 import "../styles/header.css";
 
-const Header = ({ setCookie, cookie }) => {
+const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
 	const navigate = useNavigate();
 	const handleDisconnect = () => {
 		Cookies.remove("token");
 		setCookie(undefined);
 		navigate("/");
 	};
+
+	const handleSearch = (e) => {
+		const value = e.target.value;
+		setSearchField(value);
+	};
+
 	return (
 		<header>
 			<div className="container1280">
@@ -32,6 +37,8 @@ const Header = ({ setCookie, cookie }) => {
 							name="search"
 							id="search-bar"
 							placeholder="Rechercher des aticles"
+							value={searchField}
+							onChange={handleSearch}
 						/>
 					</div>
 					{cookie ? (
