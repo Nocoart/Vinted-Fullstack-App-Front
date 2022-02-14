@@ -49,7 +49,11 @@ const Carousel = ({ searchField }) => {
 								price={elem.product_price.toFixed(2)}
 								brand={elem.product_details[0].MARQUE}
 								id={elem._id}
-								avatar={elem.owner.account.avatar.secure_url}
+								avatar={
+									elem.owner.account.avatar
+										? elem.owner.account.avatar.secure_url
+										: undefined
+								}
 								username={elem.owner.account.username}
 							/>
 						);

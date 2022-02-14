@@ -12,6 +12,10 @@
 	box-shadow: 0 0 2px grey;
 }
 
+.input-file {
+	display: none;
+}
+
 .dashed-preview-without {
 	border: 1px dashed #ebedee;
 	border-radius: 3px;
