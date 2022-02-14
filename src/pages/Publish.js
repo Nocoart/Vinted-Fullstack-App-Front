@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
+import deleteIcon from "../assets/img/delete.svg";
+
 const Publish = () => {
 	const [picture, setPicture] = useState();
 	const [title, setTitle] = useState("");
@@ -62,7 +64,16 @@ const Publish = () => {
 					<div className="file-select">
 						{picture ? (
 							<div className="dashed-preview-image">
-								<img src={picture} alt="" />
+								<img src={URL.createObjectURL(picture)} alt="" />
+
+								<img
+									src={deleteIcon}
+									alt=""
+									className="remove-img-button"
+									onClick={() => {
+										setPicture(undefined);
+									}}
+								/>
 							</div>
 						) : (
 							<div className="dashed-preview-without">
