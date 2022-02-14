@@ -1,17 +1,17 @@
 import React from "react";
 import { Range, getTrackBackground } from "react-range";
-import styled from "styled-components";
 import { useState } from "react";
 
-const SearchFilter = () => {
+const RangeFilter = ({ values, setValues }) => {
 	const STEP = 10;
 	const MIN = 0;
 	const MAX = 500;
 
-	const [values, setValues] = useState([0, 500]);
+	// const [values, setValues] = useState([0, 500]);
 
 	return (
-		<div className="range-selection">
+		<div className="range-container">
+			<span>Prix entre : </span>
 			<Range
 				values={values}
 				step={STEP}
@@ -24,7 +24,6 @@ const SearchFilter = () => {
 				renderTrack={({ props, children }) => (
 					// eslint-disable-next-line jsx-a11y/no-static-element-interactions
 					<div
-						onMouseDown={props.onMouseDown}
 						onTouchStart={props.onTouchStart}
 						style={{
 							...props.style,
@@ -54,7 +53,7 @@ const SearchFilter = () => {
 						</div>
 					</div>
 				)}
-				renderThumb={({ props, isDragged }) => (
+				renderThumb={({ index, props, isDragged }) => (
 					<div
 						{...props}
 						style={{
@@ -72,6 +71,23 @@ const SearchFilter = () => {
 					>
 						<div
 							style={{
+								position: "absolute",
+								top: "-22px",
+								color: "#fff",
+								width: "35px",
+								fontSize: "12px",
+								fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif",
+								padding: "3px",
+								borderRadius: "4px",
+								backgroundColor: "var(--vintedGreen)",
+								textAlign: "center",
+								whiteSpace: "nowrap",
+							}}
+						>
+							{values[index].toFixed(0) + " €"}
+						</div>
+						<div
+							style={{
 								backgroundColor: isDragged ? "red" : "#CCC",
 							}}
 						/>
@@ -82,4 +98,4 @@ const SearchFilter = () => {
 	);
 };
 
-export default SearchFilter;
+export default RangeFilter;

@@ -1,3 +1,33 @@
-.range-selection {
-	width: 500px;
+.filters-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #777878;
+}
+
+.range-container {
+	display: flex;
+	align-items: center;
+}
+.range-container span {
+	margin: 25px;
+}
+
+.react-switch {
+	vertical-align: middle;
+	margin-left: 4px;
+	font-size: 12px;
+}
+
+.switch-handle-down,
+.switch-handle-up {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 15;
+	color: #fff;
+	background-color: var(--vintedGreen);
+	padding-right: 2;
+	border-radius: 50%;
 }

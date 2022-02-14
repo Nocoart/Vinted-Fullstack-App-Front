@@ -6,31 +6,29 @@ import defaultAvatar from "../assets/img/default-avatar.svg";
 
 import "../styles/carousel.css";
 
-const Carousel = ({ searchField }) => {
+const Carousel = ({ searchField, values, checked }) => {
 	const [dataCarousel, setDataCarousel] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+
+	let sortingFilter;
+	if (checked === false) sortingFilter = "price-desc";
+	else sortingFilter = "price-asc";
 
 	useEffect(() => {
 		const fetchDataCarousel = async () => {
 			console.log(searchField);
 			try {
 				const response = await axios.get(
-					"https://lereacteur-vinted-api.herokuapp.com/offers"
+					`https://lereacteur-vinted-api.herokuapp.com/offers?title=${searchField}&sort=${sortingFilter}&priceMin=${values[0]}&priceMax=${values[1]}`
 				);
-				let newDataCarousel;
-				if (searchField === "") {
-					newDataCarousel = response.data.offers;
-				} else {
-					newDataCarousel = response.data.offers.filter((elem) =>
-						elem.product_name.toLowerCase().includes(searchField.toLowerCase())
-					);
-				}
+
+				const newDataCarousel = response.data.offers;
 				setDataCarousel(newDataCarousel);
 				setIsLoading(false);
 			} catch (error) {}
 		};
 		fetchDataCarousel();
-	}, [searchField]);
+	}, [searchField, sortingFilter, values]);
 
 	return (
 		<div className="container1280">
