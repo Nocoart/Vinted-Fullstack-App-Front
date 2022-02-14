@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Item from "../components/Item";
+import defaultAvatar from "../assets/img/default-avatar.svg";
 
 import "../styles/carousel.css";
 
@@ -52,7 +53,7 @@ const Carousel = ({ searchField }) => {
 								avatar={
 									elem.owner.account.avatar
 										? elem.owner.account.avatar.secure_url
-										: undefined
+										: defaultAvatar
 								}
 								username={elem.owner.account.username}
 							/>

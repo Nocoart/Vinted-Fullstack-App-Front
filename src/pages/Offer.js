@@ -30,7 +30,10 @@ const Offer = () => {
 			) : (
 				<div className="container1280">
 					<div className="offer-container">
-						<OfferCarousel pictureArr={offer.product_pictures} />
+						<OfferCarousel
+							pictureArr={offer.product_pictures}
+							singlePicture={offer.product_image}
+						/>
 						<OfferDetails offer={offer} />
 					</div>
 				</div>

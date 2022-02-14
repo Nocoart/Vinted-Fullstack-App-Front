@@ -8,7 +8,7 @@ import axios from "axios";
 
 import deleteIcon from "../assets/img/delete.svg";
 
-const Publish = () => {
+const Publish = ({ cookie }) => {
 	const [picture, setPicture] = useState();
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -22,7 +22,7 @@ const Publish = () => {
 
 	const navigate = useNavigate();
 	useEffect(() => {
-		if (!Cookies.get("token")) {
+		if (!cookie) {
 			navigate("/login");
 		}
 	}, []);
@@ -30,7 +30,6 @@ const Publish = () => {
 	const handleSubmit = async (e) => {
 		try {
 			e.preventDefault();
-			console.log(picture);
 
 			setIsLoading(true);
 			const data = new FormData();
@@ -44,12 +43,19 @@ const Publish = () => {
 			data.append("city", city);
 			data.append("price", price);
 
+			const headers = {
+				headers: { authorization: `Bearer ${Cookies.get("token")}` },
+			};
+
 			const response = await axios.post(
 				"https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-				data
+				data,
+				headers
 			);
+			console.log(response.data);
 
 			setIsLoading(false);
+			navigate(`/offer/${response.data._id}`);
 
 			console.log(response.data);
 		} catch (error) {

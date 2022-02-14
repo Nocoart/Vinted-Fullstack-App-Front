@@ -1,4 +1,5 @@
 import React from "react";
+import defaultAvatar from "../assets/img/default-avatar.svg";
 
 const OfferDetails = ({ offer }) => {
 	return (
@@ -23,7 +24,11 @@ const OfferDetails = ({ offer }) => {
 				<div className="offer-avatar-username">
 					<img
 						className="offer-avatar-img"
-						src={offer.owner.account.avatar.secure_url}
+						src={
+							offer.owner.account.avatar
+								? offer.owner.account.avatar.secure_url
+								: defaultAvatar
+						}
 						alt=""
 					/>
 					<span>{offer.owner.account.username}</span>

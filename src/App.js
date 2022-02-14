@@ -30,7 +30,7 @@ function App() {
 					<Route path="/offer/:id" element={<Product />} />
 					<Route path="/signup" element={<Signup setCookie={setCookie} />} />
 					<Route path="/login" element={<Login setCookie={setCookie} />} />
-					<Route path="/publish" element={<Publish />} />
+					<Route path="/publish" element={<Publish cookie={cookie} />} />
 				</Routes>
 			</Router>
 		</div>
