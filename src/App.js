@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 
 import "./styles/containers.css";
 import "./styles/colors.css";
+import Publish from "./pages/Publish";
 
 function App() {
 	const [cookie, setCookie] = useState(Cookies.get("Token") || undefined);
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/offer/:id" element={<Product />} />
 					<Route path="/signup" element={<Signup setCookie={setCookie} />} />
 					<Route path="/login" element={<Login setCookie={setCookie} />} />
+					<Route path="/publish" element={<Publish />} />
 				</Routes>
 			</Router>
 		</div>

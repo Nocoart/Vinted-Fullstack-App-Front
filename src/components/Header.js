@@ -62,10 +62,11 @@ const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
 							</Link>
 						</>
 					)}
-
-					<button className="button-sold header-button">
-						Vends Maintenant
-					</button>
+					<Link to={"/publish"}>
+						<button className="button-sold header-button">
+							Vends Maintenant
+						</button>
+					</Link>
 					<img src={helpIcon} alt="" />
 				</div>
 			</div>

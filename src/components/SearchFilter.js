@@ -1,5 +1,6 @@
 import React from "react";
 import { Range, getTrackBackground } from "react-range";
+import styled from "styled-components";
 import { useState } from "react";
 
 const SearchFilter = () => {
