@@ -9,14 +9,25 @@ import "../styles/signup.css";
 const Signup = ({ setCookie }) => {
 	const navigate = useNavigate();
 	const formObj = { newsletter: false };
+	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [newsLetter, setNewsLetter] = useState(false);
+	const [avatar, setAvatar] = useState();
 
 	const handleSubmit = async (e) => {
 		try {
 			e.preventDefault();
+			const data = new FormData();
+			data.append("username", username);
+			data.append("email", email);
+			data.append("password", password);
+			data.append("newsLetter", newsLetter);
+			data.append("picture", avatar);
+
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/user/signup",
-				// "https://vinted-fullstack-app.herokuapp.com/user/signup",
-				formObj
+				"https://vinted-fullstack-app.herokuapp.com/user/signup",
+				data
 			);
 			console.log("response ->", response);
 			console.log(response.data.token);
@@ -30,8 +41,6 @@ const Signup = ({ setCookie }) => {
 		}
 	};
 
-	const [avatar, setAvatar] = useState();
-
 	return (
 		<div className="signup-container">
 			<h2>S'inscrire</h2>
@@ -39,7 +48,11 @@ const Signup = ({ setCookie }) => {
 				<div className="file-select">
 					{avatar ? (
 						<div className="dashed-preview-image">
-							<img src={URL.createObjectURL(avatar)} alt="" />
+							<img
+								src={URL.createObjectURL(avatar)}
+								alt=""
+								style={{ maxWidth: "200px", objectFit: "cover" }}
+							/>
 
 							<img
 								src={deleteIcon}
@@ -75,7 +88,7 @@ const Signup = ({ setCookie }) => {
 					placeholder="Nom d'utilisateur"
 					required="required"
 					onChange={(e) => {
-						formObj.username = e.target.value;
+						setUsername(e.target.value);
 					}}
 				/>
 				<input
@@ -83,7 +96,7 @@ const Signup = ({ setCookie }) => {
 					placeholder="Email"
 					required="required"
 					onChange={(e) => {
-						formObj.email = e.target.value;
+						setEmail(e.target.value);
 					}}
 				/>
 				<input
@@ -91,7 +104,7 @@ const Signup = ({ setCookie }) => {
 					placeholder="Mot de passe"
 					required="required"
 					onChange={(e) => {
-						formObj.password = e.target.value;
+						setPassword(e.target.value);
 					}}
 				/>
 				<div className="checkbox-container">
@@ -99,7 +112,7 @@ const Signup = ({ setCookie }) => {
 						<input
 							type="checkbox"
 							onChange={(e) => {
-								formObj.newsletter = true;
+								setNewsLetter(!newsLetter);
 							}}
 						/>
 						<span>S'inscrire à notre newsletter</span>
