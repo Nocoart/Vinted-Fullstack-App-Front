@@ -1,5 +1,6 @@
 .offer-body {
 	background-color: #ebedee;
+	height: calc(100vh - 110px);
 }
 
 .offer-container {

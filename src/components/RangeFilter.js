@@ -2,7 +2,7 @@ import React from "react";
 import { Range, getTrackBackground } from "react-range";
 import { useState } from "react";
 
-const RangeFilter = ({ values, setValues }) => {
+const RangeFilter = ({ values, setValues, setCurrentPage }) => {
 	const STEP = 10;
 	const MIN = 0;
 	const MAX = 500;
@@ -20,6 +20,7 @@ const RangeFilter = ({ values, setValues }) => {
 				onChange={(values) => {
 					console.log(values);
 					setValues(values);
+					setCurrentPage(1);
 				}}
 				renderTrack={({ props, children }) => (
 					// eslint-disable-next-line jsx-a11y/no-static-element-interactions

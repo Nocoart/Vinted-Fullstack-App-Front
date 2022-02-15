@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import defaultAvatar from "../assets/img/default-avatar.svg";
 
 const OfferDetails = ({ offer }) => {
@@ -34,7 +35,15 @@ const OfferDetails = ({ offer }) => {
 					<span>{offer.owner.account.username}</span>
 				</div>
 			</div>
-			<button>Acheter</button>
+			<Link
+				to={"/payment"}
+				state={{
+					title: offer.product_name,
+					price: offer.product_price.toFixed(2),
+				}}
+			>
+				<button>Acheter</button>
+			</Link>
 		</div>
 	);
 };

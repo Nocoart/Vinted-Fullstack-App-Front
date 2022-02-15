@@ -3,6 +3,7 @@
 	justify-content: center;
 	align-items: center;
 	color: #777878;
+	font-size: 12px;
 }
 
 .range-container {
@@ -30,4 +31,14 @@
 	background-color: var(--vintedGreen);
 	padding-right: 2;
 	border-radius: 50%;
+}
+
+.offer-by-page {
+	margin-left: 40px;
+}
+
+.offer-by-page select {
+	width: 40px;
+	margin-left: 20px;
+	border-radius: 10px;
 }

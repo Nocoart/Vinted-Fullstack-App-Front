@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import Switch from "react-switch";
 
-const Switchy = ({ checked, setChecked }) => {
+const Switchy = ({ checked, setChecked, setCurrentPage }) => {
 	const handleChange = (nextChecked) => {
 		setChecked(nextChecked);
+		setCurrentPage(1);
 	};
 
 	return (
 		<div className="switch-container">
-			<span>trier par prix : </span>
+			<span>Trier par prix : </span>
 
 			<Switch
 				onChange={handleChange}
 				checked={checked}
 				className="react-switch"
-				handleDiameter={20}
-				height={20}
-				width={40}
+				handleDiameter={15}
+				height={15}
+				width={30}
 				offColor="#EFEFEF"
 				onColor="#EFEFEF"
 				uncheckedHandleIcon={<div className="switch-handle-down">⬇</div>}
