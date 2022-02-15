@@ -8,20 +8,30 @@ const ChoosePage = ({
 	foundOfferCount,
 }) => {
 	const handlePageChange = (operator) => {
-		if (operator === "-") setCurrentPage(currentPage - 1);
-		else setCurrentPage(currentPage + 1);
+		if (operator === "-2") setCurrentPage(currentPage - 2);
+		else if (operator === "-1") setCurrentPage(currentPage - 1);
+		else if (operator === "+1") setCurrentPage(currentPage + 1);
+		else if (operator === "+2") setCurrentPage(currentPage + 2);
 	};
 
 	return (
 		<div className="page-btn-container">
 			<button
-				onClick={() => handlePageChange("-")}
+				onClick={() => handlePageChange("-1")}
 				disabled={currentPage > 1 ? false : true}
 			>
 				Page précédente
 			</button>
+
+			{offerByPage * currentPage > foundOfferCount &&
+			foundOfferCount > offerByPage * 2 ? (
+				<button onClick={() => handlePageChange("-2")} className="num-page-btn">
+					{currentPage - 2}
+				</button>
+			) : null}
+
 			{currentPage > 1 && (
-				<button onClick={() => handlePageChange("-")} className="num-page-btn">
+				<button onClick={() => handlePageChange("-1")} className="num-page-btn">
 					{currentPage - 1}
 				</button>
 			)}
@@ -31,13 +41,19 @@ const ChoosePage = ({
 			</button>
 
 			{offerByPage * currentPage < foundOfferCount && (
-				<button onClick={() => handlePageChange("+")} className="num-page-btn">
+				<button onClick={() => handlePageChange("+1")} className="num-page-btn">
 					{currentPage + 1}
 				</button>
 			)}
 
+			{currentPage <= 1 && foundOfferCount > offerByPage * 2 ? (
+				<button onClick={() => handlePageChange("+2")} className="num-page-btn">
+					{currentPage + 2}
+				</button>
+			) : null}
+
 			<button
-				onClick={() => handlePageChange("+")}
+				onClick={() => handlePageChange("+1")}
 				disabled={offerByPage * currentPage < foundOfferCount ? false : true}
 			>
 				Page suivante
