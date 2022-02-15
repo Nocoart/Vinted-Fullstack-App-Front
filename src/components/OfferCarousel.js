@@ -4,7 +4,7 @@ const OfferCarousel = ({ pictureArr, singlePicture }) => {
 	return (
 		<div>
 			<div className="offer-picture-container">
-				{pictureArr.length > 0 ? (
+				{pictureArr ? (
 					pictureArr.map((picture, index) => {
 						return <img key={index} src={picture.secure_url} alt="" />;
 					})

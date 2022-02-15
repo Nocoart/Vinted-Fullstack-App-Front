@@ -51,7 +51,7 @@ const Publish = ({ cookie }) => {
 			};
 
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+				"https://vinted-fullstack-app.herokuapp.com/offer/publish",
 				data,
 				headers
 			);

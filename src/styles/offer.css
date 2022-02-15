@@ -18,6 +18,13 @@
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: scroll;
+	justify-content: center;
+}
+
+.offer-picture-container img {
+	max-width: 600px;
+	max-height: 550px;
+	object-fit: cover;
 }
 
 .offer-details-container {

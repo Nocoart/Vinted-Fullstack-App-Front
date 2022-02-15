@@ -24,7 +24,6 @@ const RangeFilter = ({ values, setValues, setFinalValues, setCurrentPage }) => {
 					setCurrentPage(1);
 				}}
 				renderTrack={({ props, children }) => (
-					// eslint-disable-next-line jsx-a11y/no-static-element-interactions
 					<div
 						onTouchStart={props.onTouchStart}
 						style={{

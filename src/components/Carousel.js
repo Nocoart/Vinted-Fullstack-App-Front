@@ -28,10 +28,10 @@ const Carousel = ({
 			console.log(searchField);
 			try {
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers?title=${searchField}&sort=${sortingFilter}&priceMin=${finalValues[0]}&priceMax=${finalValues[1]}&limit=${offerByPage}&page=${currentPage}`
+					`https://vinted-fullstack-app.herokuapp.com/offers?title=${searchField}&sort=${sortingFilter}&priceMin=${finalValues[0]}&priceMax=${finalValues[1]}&limit=${offerByPage}&page=${currentPage}`
 				);
-
-				const newDataCarousel = response.data.offers;
+				console.log(response);
+				const newDataCarousel = response.data.foundOffer;
 				setDataCarousel(newDataCarousel);
 				setFoundOfferCount(response.data.count);
 				setIsLoading(false);
@@ -75,12 +75,14 @@ const Carousel = ({
 					})
 				)}
 			</div>
-			<ChoosePage
-				currentPage={currentPage}
-				setCurrentPage={setCurrentPage}
-				offerByPage={offerByPage}
-				foundOfferCount={foundOfferCount}
-			/>
+			{foundOfferCount > offerByPage && (
+				<ChoosePage
+					currentPage={currentPage}
+					setCurrentPage={setCurrentPage}
+					offerByPage={offerByPage}
+					foundOfferCount={foundOfferCount}
+				/>
+			)}
 		</div>
 	);
 };

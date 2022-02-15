@@ -11,7 +11,7 @@ const Login = ({ setCookie }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const response = await axios.post(
-			"https://lereacteur-vinted-api.herokuapp.com/user/login",
+			"https://vinted-fullstack-app.herokuapp.com/user/login",
 			formObj
 		);
 		console.log(response.data);

@@ -15,14 +15,15 @@ const Offer = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await axios.get(
-				"https://lereacteur-vinted-api.herokuapp.com/offers"
+				"https://vinted-fullstack-app.herokuapp.com/offers"
 			);
-			setOffer(response.data.offers.find((elem) => elem._id === id));
+			console.log(response.data);
+			setOffer(response.data.foundOffer.find((elem) => elem._id === id));
 			setIsLoading(false);
 		};
 		fetchData();
 	}, []);
-
+	console.log(offer);
 	return (
 		<div className="offer-body">
 			{isLoading ? (
@@ -31,7 +32,9 @@ const Offer = () => {
 				<div className="container1280">
 					<div className="offer-container">
 						<OfferCarousel
-							pictureArr={offer.product_pictures}
+							pictureArr={
+								offer.product_pictures ? offer.product_pictures : null
+							}
 							singlePicture={offer.product_image}
 						/>
 						<OfferDetails offer={offer} />
