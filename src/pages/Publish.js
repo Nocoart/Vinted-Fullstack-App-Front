@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import deleteIcon from "../assets/img/delete.svg";
+import tickIcon from "../assets/img/tick.svg";
 
 const Publish = ({ cookie }) => {
 	const [picture, setPicture] = useState();
@@ -19,6 +20,7 @@ const Publish = ({ cookie }) => {
 	const [city, setCity] = useState("");
 	const [price, setPrice] = useState("");
 	const [isLoading, setIsLoading] = useState(undefined);
+	const [isChecked, setIsChecked] = useState(false);
 
 	const navigate = useNavigate();
 	useEffect(() => {
@@ -42,6 +44,7 @@ const Publish = ({ cookie }) => {
 			data.append("state", state);
 			data.append("city", city);
 			data.append("price", price);
+			data.append("exchange", isChecked);
 
 			const headers = {
 				headers: { authorization: `Bearer ${Cookies.get("token")}` },
@@ -62,6 +65,7 @@ const Publish = ({ cookie }) => {
 			console.log(error.message);
 		}
 	};
+
 	return (
 		<div className="publish-main">
 			<div className="container1280">
@@ -204,8 +208,26 @@ const Publish = ({ cookie }) => {
 									}}
 								/>
 								<div className="checkbox-input">
-									<label htmlFor="exchange" className="checkbox-design"></label>
-									<input type="checkbox" name="exchange" id="exchange" />
+									{isChecked ? (
+										<label
+											htmlFor="exchange"
+											className="checkbox-design-checked"
+										>
+											<img src={tickIcon} alt="" />
+										</label>
+									) : (
+										<label
+											htmlFor="exchange"
+											className="checkbox-design"
+										></label>
+									)}
+
+									<input
+										type="checkbox"
+										name="exchange"
+										id="exchange"
+										onChange={() => setIsChecked(!isChecked)}
+									/>
 									<span>Je suis intéressé(e) par les echanges</span>
 								</div>
 							</div>

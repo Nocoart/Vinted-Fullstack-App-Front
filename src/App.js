@@ -16,7 +16,8 @@ import "./styles/containers.css";
 import "./styles/colors.css";
 
 function App() {
-	const [cookie, setCookie] = useState(Cookies.get("Token") || undefined);
+	const [cookie, setCookie] = useState(Cookies.get("token") || undefined);
+
 	const [searchField, setSearchField] = useState("");
 
 	return (

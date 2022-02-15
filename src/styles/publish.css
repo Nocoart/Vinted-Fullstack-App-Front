@@ -103,6 +103,8 @@
 }
 
 .checkbox-design {
+	height: 20px;
+	width: 20px;
 	border-radius: 3px;
 	padding: 2px 11px;
 	margin: 0 15px 0 0;
@@ -110,6 +112,23 @@
 }
 .checkbox-input > input {
 	display: none;
+}
+
+.checkbox-design-checked {
+	border-radius: 3px;
+	padding: 3px 5px 3px;
+	margin: 0 15px 0 0;
+	background-color: #0ab1ba;
+	color: #fff;
+}
+.checkbox-design-checked label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.checkbox-design-checked img {
+	width: 15px;
+	height: 15px;
 }
 
 .form-validation,

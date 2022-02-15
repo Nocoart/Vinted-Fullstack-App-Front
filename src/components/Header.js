@@ -9,6 +9,7 @@ const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
 	const navigate = useNavigate();
 	const handleDisconnect = () => {
 		Cookies.remove("token");
+		Cookies.remove("vinted-id");
 		setCookie(undefined);
 		navigate("/");
 	};

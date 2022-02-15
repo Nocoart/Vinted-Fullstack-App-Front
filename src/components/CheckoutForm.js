@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import Cookies from "js-cookie";
 
 import axios from "axios";
 
@@ -15,7 +16,7 @@ const CheckoutForm = ({ price, title }) => {
 			const cardElement = elements.getElement(CardElement);
 
 			const stripeResponse = await stripe.createToken(cardElement, {
-				name: "L'id de l'acheteur",
+				name: `${Cookies.get("vinted-id")}`,
 			});
 			const stripeToken = stripeResponse.token.id;
 

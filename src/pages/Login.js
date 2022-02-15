@@ -14,10 +14,12 @@ const Login = ({ setCookie }) => {
 			"https://lereacteur-vinted-api.herokuapp.com/user/login",
 			formObj
 		);
+		console.log(response.data);
 		Cookies.set("token", response.data.token);
-		setCookie(Cookies.get("token"));
+		setCookie(response.data.token);
+		Cookies.set("vinted-id", response.data._id);
 
-		navigate("/");
+		navigate("/publish");
 	};
 	return (
 		<div className="signup-container">

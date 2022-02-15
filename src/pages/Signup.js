@@ -18,7 +18,9 @@ const Signup = ({ setCookie }) => {
 		);
 		console.log(response.data.token);
 		Cookies.set("token", response.data.token);
-		setCookie(Cookies.get("token"));
+		setCookie(response.data.token);
+		Cookies.set("vinted-id", response.data._id);
+
 		navigate("/");
 	};
 
