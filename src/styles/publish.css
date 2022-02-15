@@ -156,6 +156,7 @@
 	height: 200px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 .dashed-preview-image img {
 	height: 90%;

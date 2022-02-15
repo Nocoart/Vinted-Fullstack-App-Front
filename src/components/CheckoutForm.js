@@ -21,7 +21,7 @@ const CheckoutForm = ({ price, title }) => {
 			const stripeToken = stripeResponse.token.id;
 
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/payment",
+				"https://vinted-fullstack-app.herokuapp.com/payment",
 				{
 					token: stripeToken,
 					title: title,

@@ -7,7 +7,9 @@ import CheckoutForm from "../components/CheckoutForm";
 import "../styles/payment.css";
 
 const Payment = () => {
-	const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
+	const stripePromise = loadStripe(
+		"pk_test_51KTXtXFglrGLcARct8NbG4L162zYtczAbmrFd6ncb9WOBrtHnrjdR3A5mA78OjpXbMmE5NYVXvSepmmWdzoOuwts00LYD7tiSx"
+	);
 	const location = useLocation();
 	const { title, price } = location.state;
 
