@@ -12,6 +12,7 @@
 	border: 1px solid var(--vintedGreen);
 	border-radius: 5px;
 	color: var(--vintedGreen);
+	white-space: nowrap;
 }
 
 .page-btn-container button.current {

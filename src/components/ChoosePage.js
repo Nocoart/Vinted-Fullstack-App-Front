@@ -20,7 +20,7 @@ const ChoosePage = ({
 				onClick={() => handlePageChange("-1")}
 				disabled={currentPage > 1 ? false : true}
 			>
-				Page précédente
+				Précédente
 			</button>
 
 			{offerByPage * currentPage > foundOfferCount &&
@@ -56,7 +56,7 @@ const ChoosePage = ({
 				onClick={() => handlePageChange("+1")}
 				disabled={offerByPage * currentPage < foundOfferCount ? false : true}
 			>
-				Page suivante
+				Suivante
 			</button>
 		</div>
 	);
