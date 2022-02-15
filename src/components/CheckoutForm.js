@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import Cookies from "js-cookie";
+import moneyGif from "../assets/img/money.gif";
 
 import axios from "axios";
 
@@ -30,7 +31,7 @@ const CheckoutForm = ({ price, title }) => {
 			);
 			console.log(response.data);
 
-			if (response.data.status === "succeeded") {
+			if (response.data === "succeeded") {
 				setCompleted(true);
 			}
 		} catch (error) {}
@@ -44,7 +45,12 @@ const CheckoutForm = ({ price, title }) => {
 					<button type="submit">Valider</button>
 				</form>
 			) : (
-				<span>Paiement effectué ! </span>
+				<div className="successful-payment">
+					<span>Paiement effectué avec succes! 💫 </span>
+					<div className="divider"></div>
+
+					<img src={moneyGif} alt="" />
+				</div>
 			)}
 		</>
 	);

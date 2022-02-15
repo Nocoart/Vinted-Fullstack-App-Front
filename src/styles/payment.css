@@ -19,7 +19,9 @@
 }
 .payment-card .content {
 	padding: 24px;
-	text-align: justify;
+}
+.payment-card .content .successful-payment {
+	text-align: center;
 }
 .payment-card ul {
 	margin: 0;
