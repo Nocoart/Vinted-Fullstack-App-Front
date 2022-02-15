@@ -9,7 +9,7 @@ import ChoosePage from "./ChoosePage";
 
 const Carousel = ({
 	searchField,
-	values,
+	finalValues,
 	checked,
 	offerByPage,
 	currentPage,
@@ -28,7 +28,7 @@ const Carousel = ({
 			console.log(searchField);
 			try {
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers?title=${searchField}&sort=${sortingFilter}&priceMin=${values[0]}&priceMax=${values[1]}&limit=${offerByPage}&page=${currentPage}`
+					`https://lereacteur-vinted-api.herokuapp.com/offers?title=${searchField}&sort=${sortingFilter}&priceMin=${finalValues[0]}&priceMax=${finalValues[1]}&limit=${offerByPage}&page=${currentPage}`
 				);
 
 				const newDataCarousel = response.data.offers;
@@ -38,7 +38,7 @@ const Carousel = ({
 			} catch (error) {}
 		};
 		fetchDataCarousel();
-	}, [searchField, sortingFilter, values, offerByPage, currentPage]);
+	}, [searchField, sortingFilter, finalValues, offerByPage, currentPage]);
 
 	return (
 		<div className="container1280">

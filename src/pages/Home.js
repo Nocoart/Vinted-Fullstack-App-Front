@@ -8,6 +8,7 @@ import OfferByPage from "../components/OfferByPage";
 
 const Home = ({ searchField }) => {
 	const [values, setValues] = useState([0, 500]);
+	const [finalValues, setFinalValues] = useState([0, 500]);
 	const [checked, setChecked] = useState(false);
 	const [offerByPage, setOfferByPage] = useState(12);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -24,6 +25,8 @@ const Home = ({ searchField }) => {
 				<RangeFilter
 					values={values}
 					setValues={setValues}
+					finalValues={finalValues}
+					setFinalValues={setFinalValues}
 					setCurrentPage={setCurrentPage}
 				/>
 				<OfferByPage
@@ -34,7 +37,7 @@ const Home = ({ searchField }) => {
 			<Banner />
 			<Carousel
 				searchField={searchField}
-				values={values}
+				finalValues={finalValues}
 				checked={checked}
 				offerByPage={offerByPage}
 				currentPage={currentPage}
