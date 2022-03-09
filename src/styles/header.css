@@ -16,6 +16,12 @@ header .nav-first-line {
 	top: 0;
 }
 
+@media (max-width: 768px) {
+	header .nav-first-line {
+		flex-wrap: wrap;
+	}
+}
+
 select,
 header input {
 	border: none;
@@ -80,8 +86,6 @@ header .nav-second-line {
 	height: 52px;
 	display: flex;
 	align-items: center;
-
-	position: -webkit-sticky;
 }
 hr {
 	height: 1px;

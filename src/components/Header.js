@@ -70,9 +70,10 @@ const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
 					</Link>
 					<img src={helpIcon} alt="" />
 				</div>
+				<hr />
 			</div>
-			<hr />
-			<div className="container1280">
+
+			{/* <div className="container1280">
 				<div className="nav-second-line">
 					<a href="#">Femmes</a>
 					<a href="#">Hommes</a>
@@ -81,7 +82,7 @@ const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
 					<a href="#">À propos</a>
 					<a href="#">Notre plateforme</a>
 				</div>
-			</div>
+			</div> */}
 		</header>
 	);
 };
