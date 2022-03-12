@@ -11,11 +11,8 @@ const ChoosePage = ({ setCurrentPage, currentPage, offerByPage, foundOfferCount 
 
   return (
     <div className="page-btn-container">
-      <button onClick={() => handlePageChange("-1")} disabled={currentPage > 1 ? false : true}>
-        Précédente
-      </button>
-      <button onClick={() => handlePageChange("-1")} disabled={currentPage > 1 ? false : true}>
-        ˂
+      <button onClick={() => handlePageChange("-1")} className="large-screen" disabled={currentPage > 1 ? false : true}>
+        ⇠
       </button>
 
       {offerByPage * currentPage > foundOfferCount && foundOfferCount > offerByPage * 2 ? (
@@ -50,7 +47,7 @@ const ChoosePage = ({ setCurrentPage, currentPage, offerByPage, foundOfferCount 
         onClick={() => handlePageChange("+1")}
         disabled={offerByPage * currentPage < foundOfferCount ? false : true}
       >
-        Suivante
+        ⇢
       </button>
     </div>
   );

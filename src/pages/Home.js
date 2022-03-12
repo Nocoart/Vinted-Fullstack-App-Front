@@ -10,12 +10,13 @@ const Home = ({ searchField }) => {
   const [values, setValues] = useState([0, 500]);
   const [finalValues, setFinalValues] = useState([0, 500]);
   const [checked, setChecked] = useState(false);
-  const [offerByPage, setOfferByPage] = useState(12);
+  const [offerByPage, setOfferByPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <main>
-      <hr />
+      <Banner />
+      <hr style={{ margin: "20px 0", opacity: 0 }} />
       <div className="filters-container">
         <Switch checked={checked} setChecked={setChecked} setCurrentPage={setCurrentPage} />
         <RangeFilter
@@ -27,7 +28,7 @@ const Home = ({ searchField }) => {
         />
         <OfferByPage setOfferByPage={setOfferByPage} setCurrentPage={setCurrentPage} />
       </div>
-      <Banner />
+
       <Carousel
         searchField={searchField}
         finalValues={finalValues}

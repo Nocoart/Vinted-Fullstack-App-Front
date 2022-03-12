@@ -1,39 +1,61 @@
 .carousel-title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 20px 20px 0px;
-	margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 20px 0px;
+}
+
+.carousel-title h2 {
+  white-space: nowrap;
 }
 
 .carousel-title span {
-	color: var(--vintedGreen);
+  color: var(--vintedGreen);
 }
 
 .carousel {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+@media (max-width: 425px) {
+  .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
 }
 
 .carousel-item {
-	height: 410px;
-	width: 195px;
-	margin-bottom: 50px;
+  height: 410px;
+  width: 195px;
+  margin-bottom: 50px;
 }
 .carousel-link {
-	text-decoration: none;
-	color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 .carousel-item p {
-	padding: 0px 0;
-	color: #333;
+  padding: 0px 0;
+  color: #333;
 }
 
 .carousel-item-image {
-	height: 325px;
-	width: 100%;
-	margin-top: 15px;
-	object-fit: cover;
+  height: 325px;
+  width: 100%;
+  margin-top: 15px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .see-more-link {
+    display: none;
+  }
+  .carousel-title .page-btn-container {
+    display: none;
+  }
 }

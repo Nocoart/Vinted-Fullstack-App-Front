@@ -43,16 +43,17 @@
   border-radius: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .filters-container {
+    /* display: none; */
     flex-direction: column;
-    width: 100px;
+    /* width: 200px; */
     justify-items: center;
     align-items: center;
     align-content: flex-start;
   }
   .range-container {
-    width: 100px;
+    width: 80vw;
   }
   .range-container span {
     display: none;

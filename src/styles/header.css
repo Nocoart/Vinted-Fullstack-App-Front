@@ -1,106 +1,124 @@
 header {
-	background-color: #fff;
-	position: relative;
+  background-color: #fff;
+  position: relative;
 }
 header .logo {
-	width: 83px;
+  width: 83px;
 }
 
 header .nav-first-line {
-	margin: 0 auto;
-	height: 52px;
-	display: flex;
-	align-items: center;
-	gap: 30px;
-	position: sticky;
-	top: 0;
+  margin: 0 auto;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
 }
 
 @media (max-width: 768px) {
-	header .nav-first-line {
-		flex-wrap: wrap;
-	}
+  header .nav-first-line {
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: center;
+    max-width: 90vw;
+    margin-bottom: 0px;
+    gap: 5px;
+  }
+
+  .help-icon {
+    display: none;
+  }
+
+  header .nav-first-line input {
+    min-width: 0;
+  }
+
+  header .nav-first-line button {
+    transform: scale(0.9);
+    padding: 5px;
+  }
 }
 
 select,
 header input {
-	border: none;
-	color: #777878;
-	background-color: #f5f6f7;
-	height: 35px;
+  border: none;
+  color: #777878;
+  background-color: #f5f6f7;
+  height: 35px;
 }
 
 select {
-	width: 130px;
-	border-radius: 5px 0 0 5px;
+  width: 130px;
+  border-radius: 5px 0 0 5px;
 }
 
 header input {
-	width: 100%;
-	min-width: 200px;
-	border-radius: 0 5px 5px 0;
+  width: 100%;
+  min-width: 200px;
+  border-radius: 0 5px 5px 0;
 }
 
 .nav-search-bar {
-	width: 100%;
-	white-space: nowrap;
-	display: flex;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
 }
 
 .header-button {
-	height: 30px;
-	padding: 0 10px;
-	border: 1px solid #2cb1ba;
-	border-radius: 5px;
-	font-family: "Maison Neue";
-	font-size: 12px;
-	outline: none;
-	font-family: "Lato", sans-serif;
-	white-space: nowrap;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  font-size: 12px;
+  outline: none;
+  font-family: "Lato", sans-serif;
+  white-space: nowrap;
 }
 
 .button-sold {
-	background-color: #2cb1ba;
-	color: #fff;
+  background-color: #2cb1ba;
+  color: #fff;
 }
 
 .button-login-signup {
-	background-color: #fff;
-	color: #2cb1ba;
-	white-space: nowrap;
+  background-color: #fff;
+  color: #2cb1ba;
+  white-space: nowrap;
 }
 
 .button-logout {
-	height: 30px;
-	border-radius: 5px;
-	font-size: 12px;
-	outline: none;
-	border: none;
-	background-color: #c2175b;
-	color: #fff;
-	font-family: "Lato", sans-serif;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  background-color: #c2175b;
+  color: #fff;
+  font-family: "Lato", sans-serif;
 }
 
 header .nav-second-line {
-	margin: 0 auto;
-	height: 52px;
-	display: flex;
-	align-items: center;
+  margin: 0 auto;
+  height: 52px;
+  display: flex;
+  align-items: center;
 }
 hr {
-	height: 1px;
-	background-color: #f5f6f7;
-	border: none;
+  height: 1px;
+  background-color: #f5f6f7;
+  border: none;
 }
 .nav-second-line a {
-	padding: 0 15px;
-	text-decoration: none;
-	color: #777878;
-	height: 100%;
-	display: flex;
-	align-items: center;
+  padding: 0 15px;
+  text-decoration: none;
+  color: #777878;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .nav-second-line a:hover {
-	background-color: #f5f6f785;
-	transition: 0.1s;
+  background-color: #f5f6f785;
+  transition: 0.1s;
 }

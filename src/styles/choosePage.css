@@ -1,21 +1,24 @@
 .page-btn-container {
-	width: 20vw;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
+  width: 20vw;
+  min-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .page-btn-container button {
-	padding: 5px;
-	min-width: 30px;
-	background-color: #fff;
-	border: 1px solid var(--vintedGreen);
-	border-radius: 5px;
-	color: var(--vintedGreen);
-	white-space: nowrap;
+  padding: 5px;
+  min-width: 30px;
+  background-color: #fff;
+  border: 1px solid var(--vintedGreen);
+  border-radius: 5px;
+  color: var(--vintedGreen);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .page-btn-container button.current {
-	background-color: var(--vintedGreen);
-	color: #fff;
+  background-color: var(--vintedGreen);
+  color: #fff;
 }
