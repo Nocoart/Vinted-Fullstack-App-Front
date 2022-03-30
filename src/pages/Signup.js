@@ -11,7 +11,6 @@ import "../styles/signup.css";
 
 const Signup = ({ setCookie }) => {
   const navigate = useNavigate();
-  const formObj = { newsletter: false };
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
