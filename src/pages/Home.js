@@ -1,10 +1,14 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
+
+//components
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import Switch from "../components/Switch";
 import RangeFilter from "../components/RangeFilter";
-import "../styles/filter.css";
 import OfferByPage from "../components/OfferByPage";
+
+//styles
+import "../styles/filter.css";
 
 const Home = ({ searchField }) => {
   const [values, setValues] = useState([0, 500]);
