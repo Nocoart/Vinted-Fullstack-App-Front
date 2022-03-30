@@ -1,11 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+//components
+import ChoosePage from "./ChoosePage";
 import Item from "../components/Item";
+
+//assets
 import defaultAvatar from "../assets/img/default-avatar.svg";
 
+//styles
 import "../styles/carousel.css";
-import ChoosePage from "./ChoosePage";
 
 const Carousel = ({ searchField, finalValues, checked, offerByPage, currentPage, setCurrentPage }) => {
   const [dataCarousel, setDataCarousel] = useState([]);
