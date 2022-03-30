@@ -1,8 +1,12 @@
 import React from "react";
-import logo from "../assets/img/vinted-logo.svg";
-import helpIcon from "../assets/img/help-icon.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+
+//assets
+import logo from "../assets/img/vinted-logo.svg";
+import helpIcon from "../assets/img/help-icon.svg";
+
+//styles
 import "../styles/header.css";
 
 const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
@@ -61,19 +65,7 @@ const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
           </Link>
           <img src={helpIcon} alt="" className="help-icon" />
         </div>
-        {/* <hr /> */}
       </div>
-
-      {/* <div className="container1280">
-				<div className="nav-second-line">
-					<a href="#">Femmes</a>
-					<a href="#">Hommes</a>
-					<a href="#">Enfants</a>
-					<a href="#">Maison</a>
-					<a href="#">À propos</a>
-					<a href="#">Notre plateforme</a>
-				</div>
-			</div> */}
     </header>
   );
 };

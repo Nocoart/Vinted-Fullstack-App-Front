@@ -1,4 +1,6 @@
 import React from "react";
+
+//styles
 import "../styles/choosePage.css";
 
 const ChoosePage = ({ setCurrentPage, currentPage, offerByPage, foundOfferCount }) => {
