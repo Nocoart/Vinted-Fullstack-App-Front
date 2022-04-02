@@ -20,7 +20,7 @@ const Offer = () => {
       const response = await axios.get("https://vinted-fullstack-app.herokuapp.com/offers");
       console.log(response.data);
       setOffer(response.data.foundOffer.find((elem) => elem._id === id));
-      setIsLoading(true);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
