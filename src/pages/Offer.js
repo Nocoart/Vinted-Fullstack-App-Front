@@ -8,6 +8,7 @@ import OfferDetails from "../components/OfferDetails";
 
 //styles
 import "../styles/offer.css";
+import Loader from "../components/Loader";
 
 const Offer = () => {
   const [offer, setOffer] = useState({});
@@ -19,7 +20,7 @@ const Offer = () => {
       const response = await axios.get("https://vinted-fullstack-app.herokuapp.com/offers");
       console.log(response.data);
       setOffer(response.data.foundOffer.find((elem) => elem._id === id));
-      setIsLoading(false);
+      setIsLoading(true);
     };
     fetchData();
   }, []);
@@ -27,7 +28,7 @@ const Offer = () => {
   return (
     <div className="offer-body">
       {isLoading ? (
-        <div>Loading</div>
+        <Loader />
       ) : (
         <div className="container1280">
           <div className="offer-container">
