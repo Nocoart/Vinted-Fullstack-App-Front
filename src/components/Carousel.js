@@ -11,6 +11,7 @@ import defaultAvatar from "../assets/img/default-avatar.svg";
 
 //styles
 import "../styles/carousel.css";
+import Loader from "./Loader";
 
 const Carousel = ({ searchField, finalValues, checked, offerByPage, currentPage, setCurrentPage }) => {
   const [dataCarousel, setDataCarousel] = useState([]);
@@ -53,7 +54,7 @@ const Carousel = ({ searchField, finalValues, checked, offerByPage, currentPage,
       </div>
       <div className="carousel">
         {isLoading ? (
-          <p>Loading</p>
+          <Loader />
         ) : (
           dataCarousel.map((elem) => {
             return (
