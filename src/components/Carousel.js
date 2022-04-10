@@ -4,14 +4,14 @@ import axios from "axios";
 
 //components
 import ChoosePage from "./ChoosePage";
-import Item from "../components/Item";
+import Item from "./Item";
 import Loader from "./Loader";
-
-//assets
-import defaultAvatar from "../assets/img/default-avatar.svg";
 
 //styles
 import "../styles/carousel.css";
+
+//assets
+const defaultAvatar = require("../assets/img/default-avatar.svg");
 
 const Carousel = ({ searchField, finalValues, checked, offerByPage, currentPage, setCurrentPage }) => {
   const [dataCarousel, setDataCarousel] = useState([]);
