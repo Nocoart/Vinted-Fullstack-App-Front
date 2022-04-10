@@ -15,10 +15,17 @@ import Payment from "./pages/Payment";
 import "./styles/containers.css";
 import "./styles/colors.css";
 
-function App() {
-  const [cookie, setCookie] = useState<string | undefined>(Cookies.get("token") || undefined);
+export interface State {
+  cookie: string | undefined;
+  setCookie: React.Dispatch<React.SetStateAction<string | undefined>>;
+  searchField: string;
+  setSearchField: React.Dispatch<React.SetStateAction<string>>;
+}
 
-  const [searchField, setSearchField] = useState("");
+function App() {
+  const [cookie, setCookie] = useState<State["cookie"]>(Cookies.get("token") || undefined);
+
+  const [searchField, setSearchField] = useState<State["searchField"]>("");
 
   return (
     <div className="App">

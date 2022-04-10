@@ -2,23 +2,26 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-//assets
-import logo from "../assets/img/vinted-logo.svg";
-import helpIcon from "../assets/img/help-icon.svg";
-
 //styles
 import "../styles/header.css";
 
-const Header = ({ setCookie, cookie, setSearchField, searchField }) => {
+//types
+import { State as Props } from "../App";
+
+//assets
+const logo = require("../assets/img/vinted-logo.svg");
+const helpIcon = require("../assets/img/help-icon.svg");
+
+const Header: React.FC<Props> = ({ setCookie, cookie, setSearchField, searchField }) => {
   const navigate = useNavigate();
-  const handleDisconnect = () => {
+  const handleDisconnect = (): void => {
     Cookies.remove("token");
     Cookies.remove("vinted-id");
     setCookie(undefined);
     navigate("/");
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value;
     setSearchField(value);
   };
