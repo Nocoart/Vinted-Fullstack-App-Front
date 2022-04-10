@@ -23,7 +23,7 @@ const Offer = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  });
   console.log(offer);
   return (
     <div className="offer-body">

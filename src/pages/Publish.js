@@ -9,6 +9,7 @@ import tickIcon from "../assets/img/tick.svg";
 
 //styles
 import "../styles/publish.css";
+import Loader from "../components/Loader";
 
 const Publish = ({ cookie }) => {
   const [picture, setPicture] = useState();
@@ -28,7 +29,7 @@ const Publish = ({ cookie }) => {
     if (!cookie) {
       navigate("/login");
     }
-  }, []);
+  });
 
   const handleSubmit = async (e) => {
     try {
@@ -63,7 +64,9 @@ const Publish = ({ cookie }) => {
     }
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="publish-main">
       <div className="container1280">
         <h2>Vends ton article</h2>
