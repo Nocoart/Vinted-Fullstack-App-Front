@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //assets
-import banner from "../assets/img/vinted-banner.jpeg";
-import cut from "../assets/img/cut.svg";
+const banner = require("../assets/img/vinted-banner.jpeg");
+const cut = require("../assets/img/cut.svg");
 
 //styles
 import "../styles/banner.css";
 
-const Banner = () => {
+const Banner: React.FC = () => {
   return (
     <div className="banner">
       <img className="banner-img" src={banner} alt="" />
