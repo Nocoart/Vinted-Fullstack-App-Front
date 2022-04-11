@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//styles
+import "../styles/banner.css";
+
 //assets
 const banner = require("../assets/img/vinted-banner.jpeg");
 const cut = require("../assets/img/cut.svg");
-
-//styles
-import "../styles/banner.css";
 
 const Banner: React.FC = () => {
   return (
