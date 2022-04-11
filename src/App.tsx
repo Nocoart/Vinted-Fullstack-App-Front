@@ -24,7 +24,6 @@ export interface State {
 
 function App() {
   const [cookie, setCookie] = useState<State["cookie"]>(Cookies.get("token") || undefined);
-
   const [searchField, setSearchField] = useState<State["searchField"]>("");
 
   return (

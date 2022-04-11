@@ -10,12 +10,25 @@ import OfferByPage from "../components/OfferByPage";
 //styles
 import "../styles/filter.css";
 
-const Home = ({ searchField }) => {
-  const [values, setValues] = useState([0, 500]);
-  const [finalValues, setFinalValues] = useState([0, 500]);
-  const [checked, setChecked] = useState(false);
-  const [offerByPage, setOfferByPage] = useState(10);
-  const [currentPage, setCurrentPage] = useState(1);
+//interfaces
+interface SearchProps {
+  searchField: string;
+}
+
+export interface State {
+  values: number[];
+  finalValues: number[];
+  checked: boolean;
+  offerByPage: number;
+  currentPage: number;
+}
+
+const Home: React.FC<SearchProps> = ({ searchField }) => {
+  const [values, setValues] = useState<State["values"]>([0, 500]);
+  const [finalValues, setFinalValues] = useState<State["finalValues"]>([0, 500]);
+  const [checked, setChecked] = useState<State["checked"]>(false);
+  const [offerByPage, setOfferByPage] = useState<State["offerByPage"]>(10);
+  const [currentPage, setCurrentPage] = useState<State["currentPage"]>(1);
 
   return (
     <main>
@@ -26,7 +39,6 @@ const Home = ({ searchField }) => {
         <RangeFilter
           values={values}
           setValues={setValues}
-          finalValues={finalValues}
           setFinalValues={setFinalValues}
           setCurrentPage={setCurrentPage}
         />
